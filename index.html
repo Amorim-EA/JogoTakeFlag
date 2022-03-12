@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Pega Bandeira</title>
+    
+  <style>
+
+
+      
+    </style>
+  
+</head>
+<body>
+  <center>
+  <form>
+  <label>Numero de Bandeiras: </label><input type = "number" name="numberf"></input><br></br>
+  <label>Tempo em segundos: </label><input type = "number" name="numbert"></input>
+  </form> 
+  </center>
+  
+  <div id="tela" >
+       
+  </div>
+  
+   <center>
+   <table border="1">
+    <tr>
+      <th align="center">Pontos: </th>
+      <th align="center">Bandeiras restantes: </th>
+    </tr>
+    <tr>
+      <td id="pontos"></td>
+      <td id="BRest"></td>
+    </tr>
+   </table>
+
+  <button id="recarregar">Recarregar</button>
+     
+
+
+
+
+
+
+
+
+  
+<script type="text/javascript">
+  let Num_Flag = document.getElementByName("numberf").value;                                   
+  let Tempo_inicial = document.getElementByName("numbert").value;    
+
+  let pontos;
+  let tempo;
+  let timer;
+
+  function inicarJogo() {
+    pontos = 0;
+    
+    tempo = Tempo_inicial;
+    
+    let tela = document.getElementByID("tela");
+    
+    tela.innerHTML = '';
+    
+    for (let i = 0; i < Num_Flag; i++){
+      let flag = document.createElement("img"); 
+      flag.src = "imgs/bandeirazul.png";
+      flag.id = "f"+i;
+      tela.appenChild(flag);
+    }
+    
+  }
+  
+</script>
+  
+</body>
+</html>
